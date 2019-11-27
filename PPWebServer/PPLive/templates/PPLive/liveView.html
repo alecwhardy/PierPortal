@@ -1,0 +1,32 @@
+{% load static %}<html>
+    <head>
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+            crossorigin="anonymous">
+            </script>
+        <link rel="stylesheet" type="text/css" href="{% static 'PPLive/style.css' %}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <div id="CPLogo">
+                    <img src="http://www.marine.calpoly.edu/sites/all/themes/cpstandard_r/common/images_html/header/cplogo.svg">
+                </div>
+                <div id="PageName">
+                    <h1>Pier Portal</h1>
+                    <h2>Real-Time Underwater Camera at Avilva Pier</h2>
+                </div>
+            </div>    
+            <div id="content">
+                
+                <div id="camView">
+                    <!-- Pi Cam https://randomnerdtutorials.com/video-streaming-with-raspberry-pi-camera/-->
+                    <img src="stream1.mjpg" width="640" height="480"/>
+                </div>
+            </div>
+            <div id="footer">
+                Copyright (C) 2019 Alec Hardy 
+            </div>
+        </div>
+    </body>
+</html>

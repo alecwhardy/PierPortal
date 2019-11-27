@@ -1,0 +1,58 @@
+body{
+    position: absolute;
+    width: 100%;
+    margin: 10px;
+    padding: 0;
+    text-align: left;
+    color: #323232;
+    background: #fefcf7;
+}
+
+#wrapper{
+    width: 75%;
+    margin: 0 auto;
+    background: white;
+    padding: 0 30px;
+    height: 100%;
+    box-shadow: 0 0 0.4375rem #999;
+}
+
+#header{
+    margin: 20px 0 20px 0;
+    padding: 20px 0 0;
+    clear: both;
+    overflow: hidden;
+}
+#header #CPLogo{
+    float: left;
+    width: 185px;
+}
+#header img{
+    margin: 0 20px 0 0;
+    
+}
+#header h1{
+    margin: 0;
+    font-family: 'Open Sans', 'Trebuchet MS', Verdana, sans-serif;
+    color: #29551a;
+    font-size: 2.0833333333rem;
+    max-width: 510px;
+    font-weight: normal;
+    line-height: 1.2em;
+}
+#header h2{
+    font-style: italic;
+    line-height: 1.5em;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #4a4244;
+    font-weight: normal;
+    font-size: .9166666667rem;
+    font-family: 'Open Sans', 'Trebuchet MS', Verdana, sans-serif;
+}
+#header #PageName{
+    float: left;
+    padding: 0 0 0 20px;
+    border-left: 1px solid #154734;
+}
