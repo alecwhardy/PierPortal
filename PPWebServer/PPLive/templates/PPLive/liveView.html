@@ -10,18 +10,39 @@
             var curCam = 1;
             var waterDepth = 13.0; //m
             var cameraDepth = 5.0; //m   //TODO:  Update this with AJAX every second if no websocket controller
-            
-            // Change camera views with fade-in/fade-out
-            $("#link").click(function() {
-                $("#image").fadeTo(1000,0.30, function() {
-                    $("#image").attr("src",$("#link").attr("href"));
-                }).fadeTo(500,1);
-                return false;
-            });
 
             function doCamUnavailable(event){
                 event.srcElement.src = "{% static 'PPLive/CamUnavailable.jpg' %}";
             }
+            function updateDescription(camNum){
+                $("#cameraNum").text("Camera " + String(camNum));
+                switch(camNum){
+                    case 1:
+                    case 2:
+                        $("#cameraDesc").text("PiCam v2, 62.2 degrees Horiz-FOV, 48.8 degrees Vert-FOV");
+                        break;
+                    case 3:
+                        $("#cameraDesc").text("TODO: Super special NO-IR camera.");
+                        break;
+                }
+            }
+
+            $(document).ready(function() {
+                
+                // Handle "Switch Camera button"
+                $("#switchCamera").click(function() {
+                    // Increment current camera count, 1 - 3.  Damn, this is some nice syntax.
+                    ++curCam > 3 ? curCam=1 : null;
+                    var src = "http://PortalPi" + String(curCam) + ":8000/stream.mjpg";
+                    // Update camera description
+                    updateDescription(curCam);
+                    // Fade image, change camera src
+                    $("#camImg").fadeTo(1000,0.30, function() {
+                        $("#camImg").attr("src",src);
+                    }).fadeTo(500,1);
+                    return false;
+                });
+            });
 
         </script>
     </head>
@@ -37,43 +58,47 @@
                 </div>
             </div>    
             <div id="content">
-                
-                <table id="CamCtrlContentTbl">
-                    <tr>
-                        <td>
-                            <!-- Camera Image Source-->
-                            <img src="http://PortalPi1:8000/stream.mjpg" width="640" height="480" onerror="doCamUnavailable(event);"/>
-                        </td>
-                        <td rowspan="2">
-                            <!-- Pod Position-->
-                            Pod Position
-                            <div id="podPosition">
-                                
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <!-- Under Camera Image-->
-                            <table id="CamSelect">
-                                <tr>
-                                    <td>
-                                        <button class="camView" id="switchCamera">Switch Camera</button>
-                                        <button class="camView" id="toggleCameraLights">Toggle LEDs</button>
-                                    </td>
-                                    <td>
-                                        <span id="cameraNum" class="camStat" style="font-weight: bold;">Camera 1</span>
-                                        <span id="cameraDesc" class="camStat">PiCam 2, 62.2 degrees Horiz-FOV, 48.8 degrees Vert-FOV</span>
-                                        <span class="camStat" id="ledStats">LED Brightness: <input type="range" name="brightness" min="0" max="100">100%</span>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
+                <div id="CamContents">
+                    <table id="CamCtrlContentTbl">
+                        <tr>
+                            <td>
+                                <!-- Camera Image Source-->
+                                <img id="camImg" src="http://PortalPi1:8000/stream.mjpg" width="640" height="480" onerror="doCamUnavailable(event);"/>
+                            </td>
+                            <td rowspan="2">
+                                <!-- Pod Position-->
+                                --- Pod Position ---
+                                <div id="podPosition">
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <!-- Under Camera Image-->
+                                <table id="CamSelect">
+                                    <tr>
+                                        <td width="25%">
+                                            <button class="camView" id="switchCamera">Switch Camera</button>
+                                            <button class="camView" id="toggleCameraLights">Toggle LEDs</button>
+                                        </td>
+                                        <td>
+                                            <span id="cameraNum" class="camStat" style="font-weight: bold;">Camera 1</span>
+                                            <span id="cameraDesc" class="camStat">PiCam v2, 62.2 degrees Horiz-FOV, 48.8 degrees Vert-FOV</span>
+                                            <span class="camStat" id="ledStats">LED Brightness: <input type="range" name="brightness" min="0" max="100">100%</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="sidebar">
+                    Sidebar content goes here!
+                </div>
             </div>
             <div id="footer">
-                Copyright (C) 2019 Alec Hardy 
+                <p>Copyright &copy; 2019 Alec Hardy.<br/>This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. <a href="https://creativecommons.org/licenses/by-nc/4.0/">(CC BY-NC 4.0)</a><br/><br/>PierPortal is brought to the public by Cal Poly Mechanical Engineers.  Software and control system designed and implemented by Alec Hardy.  Camera pod and cart designed by Victor Espinosa.  Special thanks to Dr. John Ridgely and Tom Moylan.  Additional mechanical systems and iterations by Andrew Belis, Andy Crafts, Jeremy DePangher, Aaron Hein, Michael Machado, Aaron Poulos, MIsha Balingit, Cory Spieler, Aaron Jen, Alex Klimaj, Patrick Noble, Rudy Valdez, Kevin Nelson, Tony Miller, Paul Maalouf, Chahan Shah.</p>
             </div>
         </div>
     </body>
