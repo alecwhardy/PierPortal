@@ -1,10 +1,29 @@
 {% load static %}<html>
     <head>
-            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
-            crossorigin="anonymous">
-            </script>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="{% static 'PPLive/style.css' %}">
+        <script type="text/javascript">
+            
+            var curCam = 1;
+            var waterDepth = 13.0; //m
+            var cameraDepth = 5.0; //m   //TODO:  Update this with AJAX every second if no websocket controller
+            
+            // Change camera views with fade-in/fade-out
+            $("#link").click(function() {
+                $("#image").fadeTo(1000,0.30, function() {
+                    $("#image").attr("src",$("#link").attr("href"));
+                }).fadeTo(500,1);
+                return false;
+            });
+
+            function doCamUnavailable(event){
+                event.srcElement.src = "{% static 'PPLive/CamUnavailable.jpg' %}";
+            }
+
+        </script>
     </head>
     <body>
         <div id="wrapper">
@@ -19,10 +38,39 @@
             </div>    
             <div id="content">
                 
-                <div id="camView">
-                    <!-- Pi Cam https://randomnerdtutorials.com/video-streaming-with-raspberry-pi-camera/-->
-                    <img src="stream1.mjpg" width="640" height="480"/>
-                </div>
+                <table id="CamCtrlContentTbl">
+                    <tr>
+                        <td>
+                            <!-- Camera Image Source-->
+                            <img src="http://PortalPi1:8000/stream.mjpg" width="640" height="480" onerror="doCamUnavailable(event);"/>
+                        </td>
+                        <td rowspan="2">
+                            <!-- Pod Position-->
+                            Pod Position
+                            <div id="podPosition">
+                                
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <!-- Under Camera Image-->
+                            <table id="CamSelect">
+                                <tr>
+                                    <td>
+                                        <button class="camView" id="switchCamera">Switch Camera</button>
+                                        <button class="camView" id="toggleCameraLights">Toggle LEDs</button>
+                                    </td>
+                                    <td>
+                                        <span id="cameraNum" class="camStat" style="font-weight: bold;">Camera 1</span>
+                                        <span id="cameraDesc" class="camStat">PiCam 2, 62.2 degrees Horiz-FOV, 48.8 degrees Vert-FOV</span>
+                                        <span class="camStat" id="ledStats">LED Brightness: <input type="range" name="brightness" min="0" max="100">100%</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
             </div>
             <div id="footer">
                 Copyright (C) 2019 Alec Hardy 
