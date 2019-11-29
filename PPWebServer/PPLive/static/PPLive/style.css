@@ -8,6 +8,15 @@ body{
     background: #fefcf7;
 }
 
+p{
+    line-height: 1.666;
+    letter-spacing: .0333em;
+    font-family: source-sans-pro, sans-serif;
+    font-weight: normal;
+    color: #272825;
+    -webkit-font-smoothing: antialiased;
+}
+
 #wrapper{
     width: 75%;
     margin: 0 auto;
@@ -57,6 +66,12 @@ body{
     border-left: 1px solid #154734;
 }
 
+#camImg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #camSelect{
     width: 100%;
 }
@@ -65,7 +80,7 @@ body{
     display: block;
     width: 100px;
     height: 50px;
-    margin: 2px;
+    margin: 5px 2px;
 }
 
 .camStat{
@@ -81,6 +96,37 @@ body{
     position: relative;
     top: 0.5em;
     width: 200px;
+}
+
+#winchCtrlPanel{
+    padding: 0 5px;
+    border-left: 1px solid #154734;
+}
+
+#jogSpeedRange{
+    width: 95%;
+    display: block;
+}
+.winchCtrl{
+    display: inline-block;
+}
+
+#winchUp, #winchDown{
+    font-weight: bold;
+}
+
+#goToPosEntry{
+    width: 3em;
+}
+
+#goToPosCtrls{
+    display: block;
+    padding: 15px 0;
+}
+
+button.winchCtrl{
+    width: 35px;
+    height: 35px;
 }
 
 #podPosition{
@@ -110,8 +156,35 @@ body{
     left: -30px;
 }
 
-#CamCtrlContentTbl, #camSelect{
+#CamCtrlContentTbl, #camSelect, #podPosTbl{
     border: 1px solid #154734;
+    border-radius: 10px;
+    background-color: #ABCAE9;
+}
+
+#navSidebar{
+    margin: 0 0;
+    padding: 0 0;
+    list-style-type: none;
+}
+
+.navSidebarActive{
+    border-left: 5px solid #154734;
+}
+
+#navSidebar li{
+    padding: 20px;
+    margin: 5px 0;
+    width: 100%;
+    background-color: #EFEFEE;
+    display: block;
+}
+#navSidebar a{
+    font-family: source-sans-pro, sans-serif;
+    font-weight: normal;
+    line-height: 1.5;
+    color: #272825;
+    text-decoration: none;
 }
 
 /* For debugging */

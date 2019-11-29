@@ -54,22 +54,25 @@
                 </div>
                 <div id="PageName">
                     <h1>Pier Portal</h1>
-                    <h2>Real-Time Underwater Camera at Avilva Pier</h2>
+                    <h2>Real-Time Underwater Camera</h2>
                 </div>
             </div>    
             <div id="content">
+                <p>The "Pier Portal" system provides public real-time footage from the pier at Cal Poly's Center for Coastal Marine Sciences.  The Underwater pod contains three cameras: two 8MP standard webcams and one 8MP No-IR webcam.  The system is user-controlled and available 24/7.  If the system is currently in use or reserved, use the link on the right sidebar to reserve a time.</p>
                 <div id="CamContents">
                     <table id="CamCtrlContentTbl">
                         <tr>
                             <td>
                                 <!-- Camera Image Source-->
-                                <img id="camImg" src="http://PortalPi1:8000/stream.mjpg" width="640" height="480" onerror="doCamUnavailable(event);"/>
+                                <img id="camImg" src="http://PortalPi1:8000/stream.mjpg" width="100%" onerror="doCamUnavailable(event);"/>
                             </td>
-                            <td rowspan="2">
+                            <td rowspan="2" id="podPosTbl">
                                 <!-- Pod Position-->
                                 --- Pod Position ---
                                 <div id="podPosition">
-
+                                    <span id="podPosText">
+                                        <br/>--0m--<br/>|<br/>|<br/>|<br/>|<br/>|<br/>|<br/>|<br/>|<br/>|<br/>|<br/>|<br/>|<br/>|<br/>10.4m<br/><img src="{% static 'PPLive/PodAssemblyTransparent.png' %}" width="50px" /><br/>|<br/>|<br/>|<br/>|<br/>|<br/>|<br/>|<br/>--12.3m--
+                                    </span>
                                 </div>
                             </td>
                         </tr>
@@ -78,7 +81,7 @@
                                 <!-- Under Camera Image-->
                                 <table id="CamSelect">
                                     <tr>
-                                        <td width="25%">
+                                        <td width="15%">
                                             <button class="camView" id="switchCamera">Switch Camera</button>
                                             <button class="camView" id="toggleCameraLights">Toggle LEDs</button>
                                         </td>
@@ -87,6 +90,15 @@
                                             <span id="cameraDesc" class="camStat">PiCam v2, 62.2 degrees Horiz-FOV, 48.8 degrees Vert-FOV</span>
                                             <span class="camStat" id="ledStats">LED Brightness: <input type="range" name="brightness" min="0" max="100">100%</span>
                                         </td>
+                                        <td width="25%" id="winchCtrlPanel">
+                                            <span class="winchCtrl" style="font-weight: bold; text-align: center;">Position Control</span><br/>
+                                            Jog Speed: 10<input id="jogSpeedRange" type="range" name="brightness" min="0" max="100">
+                                            <button class="winchCtrl" id="winchHome">&#x1F3E0;</button>
+                                            <button class="winchCtrl" id="winchUp">&uarr;</button>
+                                            <button class="winchCtrl" id="winchDown">&darr;</button>
+                                            <button class="winchCtrl" id="winchbottom">&#x1F41F;</button><br/>
+                                            <span id="goToPosCtrls">GOTO: <input type="text" class="winchCtrl" id="goToPosEntry"> <button id="doGoToPos">Go!</button></span>
+                                        </td>
                                     </tr>
                                 </table>
                             </td>
@@ -94,11 +106,16 @@
                     </table>
                 </div>
                 <div id="sidebar">
-                    Sidebar content goes here!
+                    <ul id="navSidebar">
+                        <a href=""><li class="navSidebarActive">Pier Portal Live</li></a>
+                        <a href=""><li>Reserve Control Time</li></a>
+                        <a href=""><li>Stream Source</li></a>
+                        <a href=""><li>About Pier Portal</li></a>
+                    </ul>
                 </div>
             </div>
             <div id="footer">
-                <p>Copyright &copy; 2019 Alec Hardy.<br/>This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. <a href="https://creativecommons.org/licenses/by-nc/4.0/">(CC BY-NC 4.0)</a><br/><br/>PierPortal is brought to the public by Cal Poly Mechanical Engineers.  Software and control system designed and implemented by Alec Hardy.  Camera pod and cart designed by Victor Espinosa.  Special thanks to Dr. John Ridgely and Tom Moylan.  Additional mechanical systems and iterations by Andrew Belis, Andy Crafts, Jeremy DePangher, Aaron Hein, Michael Machado, Aaron Poulos, MIsha Balingit, Cory Spieler, Aaron Jen, Alex Klimaj, Patrick Noble, Rudy Valdez, Kevin Nelson, Tony Miller, Paul Maalouf, Chahan Shah.</p>
+                <p>Copyright &copy; 2020 Alec Hardy.<br/>This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. <a href="https://creativecommons.org/licenses/by-nc/4.0/">(CC BY-NC 4.0)</a><br/><br/>PierPortal is brought to the public by Cal Poly Mechanical Engineers.  Software and control system designed and implemented by Alec Hardy.  Camera pod and cart designed by Victor Espinosa.  Special thanks to Dr. John Ridgely and Tom Moylan.  Additional mechanical systems and iterations by Andrew Belis, Andy Crafts, Jeremy DePangher, Aaron Hein, Michael Machado, Aaron Poulos, MIsha Balingit, Cory Spieler, Aaron Jen, Alex Klimaj, Patrick Noble, Rudy Valdez, Kevin Nelson, Tony Miller, Paul Maalouf, Chahan Shah.</p>
             </div>
         </div>
     </body>
