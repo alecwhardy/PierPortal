@@ -4,6 +4,9 @@
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />    
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- TODO:  ONLY ALLOW THIS TO SHOW UP IF ACTIVELY CONTROLLING WINCH!!! -->
+        <script type="text/javascript" src="{% static 'PPLive/control.js' %}"></script>
+        
         <link rel="stylesheet" type="text/css" href="{% static 'PPLive/style.css' %}">
         <script type="text/javascript">
             
@@ -22,7 +25,7 @@
                         $("#cameraDesc").text("PiCam v2, 62.2 degrees Horiz-FOV, 48.8 degrees Vert-FOV");
                         break;
                     case 3:
-                        $("#cameraDesc").text("TODO: Super special NO-IR camera.");
+                        $("#cameraDesc").text("PiCam v2 NoIR, 62.2 degrees Horiz-FOV, 48.8 degrees Vert-FOV.  No IR Filter.");
                         break;
                 }
             }
@@ -90,9 +93,9 @@
                                             <span id="cameraDesc" class="camStat">PiCam v2, 62.2 degrees Horiz-FOV, 48.8 degrees Vert-FOV</span>
                                             <span class="camStat" id="ledStats">LED Brightness: <input type="range" name="brightness" min="0" max="100">100%</span>
                                         </td>
-                                        <td width="25%" id="winchCtrlPanel">
+                                        <td width="160px" id="winchCtrlPanel">
                                             <span class="winchCtrl" style="font-weight: bold; text-align: center;">Position Control</span><br/>
-                                            Jog Speed: 10<input id="jogSpeedRange" type="range" name="brightness" min="0" max="100">
+                                            Jog Speed: 10<input id="jogSpeedRange" type="range" name="brightness" min="0" max="10">
                                             <button class="winchCtrl" id="winchHome">&#x1F3E0;</button>
                                             <button class="winchCtrl" id="winchUp">&uarr;</button>
                                             <button class="winchCtrl" id="winchDown">&darr;</button>
