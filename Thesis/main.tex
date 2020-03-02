@@ -85,6 +85,11 @@
 \makeatother   % Cancel the effect of \makeatletter
 % ---------------------------------------
 
+% Let's standardize tables!
+% AWH: Added 2/24/20
+\setlength{\arrayrulewidth}{0.2mm} % Fix table borders by making them 0.2mm thick, otherwise \rowcolor breaks the border
+\definecolor{Gray}{gray}{0.9}
+
 % Define Appendix refs
 \crefname{app}{appendix}{appendices}
 \Crefname{app}{Appendix}{Appendices}
