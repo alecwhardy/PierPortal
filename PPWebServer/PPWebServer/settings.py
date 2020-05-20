@@ -123,3 +123,33 @@ STATIC_URL = '/static/'
 
 # Channels
 ASGI_APPLICATION = 'PPWebServer.routing.application'
+
+# Enable logging of logger.info to display in console
+# From https://docs.djangoproject.com/en/3.0/topics/logging/
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'WARNING',
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+            'propagate': False,
+        },
+        # Enables logging of info level logs to console
+        'PPLive': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+            'propagate': False,
+        },
+    },
+
+}
