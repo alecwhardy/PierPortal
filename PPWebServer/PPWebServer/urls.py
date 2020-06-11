@@ -20,3 +20,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('live/', include('PPLive.urls'))
 ]
+

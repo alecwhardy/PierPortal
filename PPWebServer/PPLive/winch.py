@@ -17,7 +17,7 @@ class Winch():
     # Home position
     POS_MIN = 0
     # Bottom of the ocean.  Need to test to find this value.
-    POS_MAX = 9999
+    POS_MAX = 99999
 
     def __init__(self):
         # First, see if we have a working connection to the PLC
@@ -29,7 +29,6 @@ class Winch():
         self.pos_offset = 0
 
         self.position = self.get_position()
-
 
     def jog(self, speed):
         logger.info("Jogging at speed " + str(speed))
