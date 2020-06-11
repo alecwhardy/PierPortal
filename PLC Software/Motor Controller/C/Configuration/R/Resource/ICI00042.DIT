@@ -1,0 +1,105 @@
+(*
+T: FUNCTION_BLOCK MC_TorqueControl
+FW: YES	NO_VARIANT MC_TorqueControl SKIP_NOTHING	SFB_INIT_RELEASE
+CI#: 42
+QSL: 0
+QVE: 16
+QPar: 16
+QFBI: 0
+*)
+
+Axis	1	VAR_IN_OUT	@TYP:24
+		     
+
+;
+
+
+Execute	2	VAR_INPUT	@TYP:1
+		     
+
+;
+
+
+Torque	3	VAR_INPUT	@TYP:11
+		     
+
+;
+
+
+TorqueRamp	4	VAR_INPUT	@TYP:11
+		     
+
+;
+
+
+Velocity	5	VAR_INPUT	@TYP:11
+		     
+
+;
+
+
+Acceleration	6	VAR_INPUT	@TYP:11
+		     
+
+;
+
+
+Deceleration	7	VAR_INPUT	@TYP:11
+		     
+
+;
+
+
+Jerk	8	VAR_INPUT	@TYP:11
+		     
+
+;
+
+
+Direction	9	VAR_INPUT	@TYP:3
+		     
+
+;
+
+
+BufferMode	10	VAR_INPUT	@TYP:3
+		     
+
+;
+
+
+InTorque	11	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+Busy	12	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+Active	13	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+CommandAborted	14	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+Error	15	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+ErrorID	16	VAR_OUTPUT	@TYP:7
+		     
+
+;
+

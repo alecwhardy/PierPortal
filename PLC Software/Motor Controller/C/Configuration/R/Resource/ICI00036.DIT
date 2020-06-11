@@ -1,0 +1,75 @@
+(*
+T: FUNCTION_BLOCK MC_Stop
+FW: YES	NO_VARIANT MC_Stop SKIP_NOTHING	SFB_INIT_RELEASE
+CI#: 36
+QSL: 0
+QVE: 11
+QPar: 11
+QFBI: 0
+*)
+
+Axis	1	VAR_IN_OUT	@TYP:24
+		     
+
+;
+
+
+Execute	2	VAR_INPUT	@TYP:1
+		     
+
+;
+
+
+Deceleration	3	VAR_INPUT	@TYP:11
+		     
+
+;
+
+
+Jerk	4	VAR_INPUT	@TYP:11
+		     
+
+;
+
+
+BufferMode	5	VAR_INPUT	@TYP:3
+		     
+
+;
+
+
+Done	6	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+Busy	7	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+Active	8	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+CommandAborted	9	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+Error	10	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+ErrorID	11	VAR_OUTPUT	@TYP:7
+		     
+
+;
+

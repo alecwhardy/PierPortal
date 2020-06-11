@@ -1,0 +1,5 @@
+MC_MoveRelative_1	MC_MoveRelative
+MC_Power_1	MC_Power
+MC_ReadStatus_1	MC_ReadStatus
+MC_Stop_1	MC_Stop
+MC_TorqueControl_1	MC_TorqueControl

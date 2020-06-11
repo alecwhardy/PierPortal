@@ -1,0 +1,27 @@
+(*
+T: FUNCTION_BLOCK MC_ReadStatus
+FW: NO
+CI#: 39
+QSL: 17
+QVE: 17
+QVPC: 17
+QPar: 17
+QFBI: 0
+*)
+Accelerating	@IV 16	@TYP:1	VAR_OUTPUT
+Axis	@IV 1	@TYP:24	VAR_IN_OUT
+Busy	@IV 4	@TYP:1	VAR_OUTPUT
+ConstantVelocity	@IV 15	@TYP:1	VAR_OUTPUT
+ContinuousMotion	@IV 12	@TYP:1	VAR_OUTPUT
+Decelerating	@IV 17	@TYP:1	VAR_OUTPUT
+Disabled	@IV 7	@TYP:1	VAR_OUTPUT
+DiscreteMotion	@IV 11	@TYP:1	VAR_OUTPUT
+Enable	@IV 2	@TYP:1	VAR_INPUT
+Error	@IV 5	@TYP:1	VAR_OUTPUT
+ErrorID	@IV 6	@TYP:7	VAR_OUTPUT
+ErrorStop	@IV 8	@TYP:1	VAR_OUTPUT
+Homing	@IV 14	@TYP:1	VAR_OUTPUT
+StandStill	@IV 10	@TYP:1	VAR_OUTPUT
+Stopping	@IV 9	@TYP:1	VAR_OUTPUT
+SynchronizedMotion	@IV 13	@TYP:1	VAR_OUTPUT
+Valid	@IV 3	@TYP:1	VAR_OUTPUT

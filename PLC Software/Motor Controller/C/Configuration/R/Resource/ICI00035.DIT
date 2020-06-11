@@ -1,0 +1,106 @@
+(*
+T: PROGRAM Main
+FW: NO
+CI#: 35
+QSL: 16
+QVE: 16
+QVPC: 16
+QPar: 0
+QFBI: 5
+*)
+@V 1 6 0
+MC_MoveRelative_1	1	VAR	@FB:41
+		     
+
+;
+
+@V 1 11 0
+WinchAxis	2	VAR RETAIN	@TYP:7
+		     
+@TYP:7# 00#0001
+;
+
+@V 1 16 0
+WinchEnable	3	VAR_EXTERNAL	@TYP:1
+@RV 55		     
+
+;
+
+@V 1 21 0
+WinchVelocity	4	VAR	@TYP:11
+		     
+@TYP:11# 1.00000000000000000E+001
+;
+
+@V 1 22 0
+WinchAcceleration	5	VAR	@TYP:11
+		     
+@TYP:11# 1.00000000000000000E+001
+;
+
+@V 1 23 0
+WinchDeceleration	6	VAR	@TYP:11
+		     
+@TYP:11# 1.00000000000000000E+001
+;
+
+@V 1 24 0
+WinchJerk	7	VAR	@TYP:11
+		     
+@TYP:11# 1.00000000000000000E+001
+;
+
+@V 1 25 0
+ENO_1	8	VAR	@TYP:1
+		     
+
+;
+
+@V 1 26 0
+MC_Power_1	9	VAR	@FB:37
+		     
+
+;
+
+@V 1 27 0
+MC_ReadStatus_1	10	VAR	@FB:39
+		     
+
+;
+
+@V 1 28 0
+MC_Stop_1	11	VAR	@FB:36
+		     
+
+;
+
+@V 1 29 0
+WinchDoMove	12	VAR	@TYP:1
+		     
+
+;
+
+@V 1 30 0
+doWinchMove	13	VAR	@TYP:1
+		     
+
+;
+
+@V 1 35 0
+goToAbsPos	14	VAR_EXTERNAL	@TYP:3
+@RV 57		     
+
+;
+
+@V 1 36 0
+axisDoExecute	15	VAR_EXTERNAL	@TYP:1
+@RV 58		     
+
+;
+
+@V 1 41 0
+MC_TorqueControl_1	16	VAR	@FB:42
+		     
+
+;
+

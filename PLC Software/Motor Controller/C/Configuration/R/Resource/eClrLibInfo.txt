@@ -1,0 +1,1 @@
+C:\ProgramData\Yaskawa\MotionWorks IEC 2 Express\2_5_0_78_559\plc\FW_LIB\PLCopenPlus_v_2_2a\PLCopenPlus_v_2_2a.DLL

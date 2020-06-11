@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><servoNet><sgdvDPM><cycleTime>period_2_ms</cycleTime><node><qFullTimeout>10000</qFullTimeout><cmdBlkTimeout>5000</cmdBlkTimeout><alarmFormat>SIGMA_III_FORMAT</alarmFormat></node></sgdvDPM></servoNet>

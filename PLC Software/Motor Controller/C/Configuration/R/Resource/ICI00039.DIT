@@ -1,0 +1,111 @@
+(*
+T: FUNCTION_BLOCK MC_ReadStatus
+FW: YES	NO_VARIANT MC_ReadStatus SKIP_NOTHING	SFB_INIT_RELEASE
+CI#: 39
+QSL: 0
+QVE: 17
+QPar: 17
+QFBI: 0
+*)
+
+Axis	1	VAR_IN_OUT	@TYP:24
+		     
+
+;
+
+
+Enable	2	VAR_INPUT	@TYP:1
+		     
+
+;
+
+
+Valid	3	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+Busy	4	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+Error	5	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+ErrorID	6	VAR_OUTPUT	@TYP:7
+		     
+
+;
+
+
+Disabled	7	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+ErrorStop	8	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+Stopping	9	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+StandStill	10	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+DiscreteMotion	11	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+ContinuousMotion	12	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+SynchronizedMotion	13	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+Homing	14	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+ConstantVelocity	15	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+Accelerating	16	VAR_OUTPUT	@TYP:1
+		     
+
+;
+
+
+Decelerating	17	VAR_OUTPUT	@TYP:1
+		     
+
+;
+

@@ -1,0 +1,3 @@
+Set Ethernet adapter IPv4 address to something on same subnet as PLC.
+
+If PLC is 192.168.1.1, set adapter address to 192.168.1.2!!!
